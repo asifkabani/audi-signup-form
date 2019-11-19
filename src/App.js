@@ -1,10 +1,21 @@
-import React, { Component } from 'react';
-import Form from './components/Form';
+import React, { Component } from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Form from "./components/Form";
 
 class App extends Component {
+  state = {
+    fullName: "",
+    emailAddress: "",
+    phoneNumber: ""
+  };
+
   render() {
+    const { fullName, emailAddress, phoneNumber } = this.state;
     return (
-      <Form />
+      <>
+        <CssBaseline />
+        <Form name={fullName} email={emailAddress} phone={phoneNumber} />
+      </>
     );
   }
 }
